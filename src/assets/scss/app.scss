@@ -1,0 +1,271 @@
+// @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap");
+
+// /* Define 8-bit font */
+// @font-face {
+//   font-family: "8-bitfont";
+//   src: url("../fonts/8-bit Arcade In.ttf") format("truetype"),
+//     url("../fonts/8-bit Arcade Out.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// $main-500: #64ccfe;
+// $main-400: #8bd9fe;
+// $main-300: #b2e6ff;
+// $main-200: #d8f2ff;
+// $main-100: #ffffff;
+
+// $second-500: #63c74d;
+// $second-400: #82d271;
+// $second-300: #a1dd94;
+// $second-200: #c1e9b8;
+// $second-100: #e0f4db;
+
+// $accent-500: #041f2f;
+// $accent-400: #364c59;
+// $accent-300: #687982;
+// $accent-200: #9ba5ac;
+// $accent-100: #cdd2d5;
+
+// /* Global body font */
+// body {
+//   font-family: "Press Start 2P", Arial, sans-serif;
+//   background-color: $accent-500;
+//   color: $main-200;
+// }
+
+// /* Override display headings to use 8-bit font */
+// .display-1,
+// .display-2,
+// .display-3,
+// .display-4,
+// .display-5,
+// .display-6 {
+//   font-family: "8-bitfont", sans-serif;
+// }
+// h1,
+// h2,
+// h3,
+// h4,
+// h5 {
+//   margin-bottom: 0;
+// }
+// .main-heading {
+//   font-size: 28rem;
+//   margin-top: -14rem;
+//   margin-bottom: -6rem;
+//   line-height: 30rem;
+//   color: $main-500;
+//   text-shadow: 11px 13px 0px $accent-400;
+// }
+
+// .hero-section {
+//   height: 100vh;
+//   padding-top: 7rem;
+
+//   .menus {
+//     height: 111px;
+//   }
+
+//   .start-button,
+//   .load-button {
+
+//     height: 100%;
+//     font-size: 23px;
+//     cursor: pointer;
+//     p {
+//       margin-top: 0;
+//       margin-bottom: 0;
+//     }
+//     i {
+//       display: none;
+//       margin-right: 11px;
+//     }
+
+//     &:hover {
+//       p,
+//       i {
+//         font-size: 34px;
+//         color: $main-500;
+//       }
+//       i {
+//         display: block;
+//         color: $second-500;
+//       }
+//     }
+//   }
+// }
+
+// .hero-headings {
+//   h1 {
+//     margin-bottom: 0.5rem;
+//   }
+//   h1,
+//   p {
+//     margin-right: 1.5rem;
+//   }
+//   p {
+//     color: #f9a929;
+//   }
+// }
+
+// .trademark-name {
+//   padding-top: 2rem;
+// }
+
+// .nav-8bit {
+//   padding: 3rem;
+// }
+// .contact-details {
+//   .socials {
+//     .fb {
+//       width: 41px;
+//     }
+//     img {
+//       width: 49px;
+//     }
+//   }
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap");
+
+/* Define 8-bit font */
+@font-face {
+  font-family: "8-bitfont";
+  src: url("../fonts/8-bit Arcade In.ttf") format("truetype"),
+    url("../fonts/8-bit Arcade Out.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$main-500: #64ccfe;
+$main-400: #8bd9fe;
+$main-300: #b2e6ff;
+$main-200: #d8f2ff;
+$main-100: #ffffff;
+
+$second-500: #63c74d;
+$second-400: #82d271;
+$second-300: #a1dd94;
+$second-200: #c1e9b8;
+$second-100: #e0f4db;
+
+$accent-500: #041f2f;
+$accent-400: #364c59;
+$accent-300: #687982;
+$accent-200: #9ba5ac;
+$accent-100: #cdd2d5;
+
+/* Global body font */
+body {
+  font-family: "Press Start 2P", Arial, sans-serif;
+  background-color: $accent-500;
+  color: $main-200;
+}
+
+/* Override display headings to use 8-bit font */
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  font-family: "8-bitfont", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0;
+}
+
+.main-heading {
+  font-size: 28rem;
+  margin-top: -14rem;
+  margin-bottom: -6rem;
+  line-height: 30rem;
+  color: $main-500;
+  text-shadow: 11px 13px 0px $accent-400;
+}
+
+.hero-section {
+  height: 100vh;
+  padding-top: 7rem;
+
+  .menus {
+    height: 111px;
+  }
+
+  .start-button,
+  .load-button {
+    height: 100%;
+    font-size: 23px;
+    cursor: pointer;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    i {
+      display: none;
+      margin-right: 11px;
+    }
+
+    &:hover {
+      .load-button {
+        margin-right: 1.5rem;
+      }
+      p,
+      i {
+        font-size: 34px;
+        color: $main-500;
+      }
+      i {
+        display: block;
+        color: $second-500;
+      }
+    }
+  }
+}
+
+.hero-headings {
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+  h1,
+  p {
+    margin-right: 1.5rem;
+  }
+  p {
+    color: #f9a929;
+  }
+}
+
+.trademark-name {
+  padding-top: 2rem;
+}
+
+.nav-8bit {
+  padding: 3rem;
+
+  .score {
+    color: $second-500;
+  }
+}
+
+.contact-details {
+  .socials {
+    cursor: pointer;
+
+    .fb {
+      width: 41px;
+    }
+    img {
+      width: 49px;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+}
