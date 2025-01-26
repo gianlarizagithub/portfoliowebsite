@@ -1,1 +1,80 @@
-<p>project-details works!</p>
+<div class="container">
+  <div class="navbar nav-8bit">
+    <a routerLink="/home">Back</a>
+  </div>
+
+  <div class="container-fluid">
+    <div class="project-details-container">
+      <div class="row">
+        <div class="skills-required-container col-6">
+          <div class="d-block custom-border mb-4">
+            <div class="title mb-4">
+              <div class="pixel-box"></div>
+              <span>SKILLS REQUIRED</span>
+            </div>
+            <ul #skillsList>
+              <li *ngFor="let skill of skills">
+                <div class="item-skill">
+                  <div class="item-image">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="item-name">
+                    <span>{{ skill }}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="objectives-container custom-border">
+            <div class="title">
+              <div class="pixel-box"></div>
+              <span>OBJECTIVES</span>
+            </div>
+            <div class="objectives-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Amet sed tellus pharetra
+                urna vitae egestas nunc. Fermentum a velit integer vitae. Enim
+                arcu nibh sed cursus neque. Facilisi sed nunc diam ut augue ut
+                maecenas pellentesque. Enim pellentesque tortor maecenas
+                consectetur et vitae diam. Maecenas interdum arcu.
+              </p>
+            </div>
+            <div class="info-buttons d-flex gap-3">
+              <button class="main-button"><a href="">Live Demo!</a></button>
+              <button class="second-button"><a href="">View Code</a></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="selected-project-container col-6">
+          <div class="selected-project-image-big">
+            <img src="" alt="" />
+          </div>
+          <div class="project-selected-title mt-4">
+            <h2>Admin Dashboard</h2>
+          </div>
+          <div class="selected-project-details mt-5">
+            <div class="label">
+              <span>DIFFICULTY</span>
+              <span>QUEST TIME</span>
+              <span>TYPE</span>
+            </div>
+            <div class="mid">
+              <span>:</span>
+              <span>:</span>
+              <span>:</span>
+            </div>
+            <div class="val">
+              <span>S S S</span>
+              <span>120 HRS</span>
+              <span>BACKEND</span>
+            </div>
+          </div>
+          <button class="second-button">
+            <a routerLink="/contact-form">Contact Me!</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

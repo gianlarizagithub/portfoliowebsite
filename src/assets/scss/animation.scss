@@ -1,0 +1,76 @@
+.slide-top {
+  animation: slide-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(50px); /* Start 50px below its original position */
+    opacity: 0; /* Invisible at the start */
+  }
+  100% {
+    transform: translateY(0); /* End at its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: translateY(-100px); /* Drop from the top */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    transform: translateY(0); /* Land at original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0; /* Start with no text */
+    border-right: none; /* Hide border at start */
+  }
+  to {
+    width: 100%; /* Reveal the full text */
+    border-right: 2px solid #f9a929; /* Show border after animation */
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f9a929; /* Blinking cursor color */
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); /* Start off to the left */
+  }
+  100% {
+    transform: translateX(0); /* End at its normal position */
+  }
+}
+
+@keyframes blink2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fast-blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
