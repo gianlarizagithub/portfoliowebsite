@@ -55,7 +55,10 @@
           </div>
           <ul>
             @for (skill of skills; track $index) {
-            <li>
+            <li
+              (click)="updateProgressBar(skill)"
+              [ngClass]="{ active: skill.active }"
+            >
               <div
                 class="skill-item d-flex justify-content-between align-items-center"
               >
@@ -68,7 +71,7 @@
                   </div>
                   <span>{{ skill.skill }}</span>
                 </div>
-                <div class="skill-percentage">{{ skill.percentage }}</div>
+                <div class="skill-percentage">{{ skill.percentage }}%</div>
               </div>
             </li>
             }
@@ -80,72 +83,45 @@
             <span>PASSIVE :</span>
           </div>
           <ul>
-            <li>
+            @for (passive of passives; track $index) {
+            <li
+              (click)="updateProgressBar(passive)"
+              [ngClass]="{ active: passive.active }"
+            >
               <div
                 class="skill-item d-flex justify-content-between align-items-center"
               >
                 <div class="language d-flex align-items-center gap-2">
                   <div class="skill-logo">
-                    <img src="" alt="" />
+                    <img [src]="'../../assets/images/' + passive.imageUrl" />
                   </div>
-                  <span>UI / UX</span>
+                  <span>{{ passive.skill }}</span>
                 </div>
-                <div class="skill-percentage">90%</div>
+                <div class="skill-percentage">{{ passive.percentage }}%</div>
               </div>
             </li>
-            <li>
-              <div
-                class="skill-item d-flex justify-content-between align-items-center"
-              >
-                <div class="language d-flex align-items-center gap-2">
-                  <div class="skill-logo">
-                    <img src="" alt="" />
-                  </div>
-                  <span>UI / UX</span>
-                </div>
-                <div class="skill-percentage">90%</div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="skill-item d-flex justify-content-between align-items-center"
-              >
-                <div class="language d-flex align-items-center gap-2">
-                  <div class="skill-logo">
-                    <img src="" alt="" />
-                  </div>
-                  <span>UI / UX</span>
-                </div>
-                <div class="skill-percentage">90%</div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="skill-item d-flex justify-content-between align-items-center"
-              >
-                <div class="language d-flex align-items-center gap-2">
-                  <div class="skill-logo">
-                    <img src="" alt="" />
-                  </div>
-                  <span>Drawing</span>
-                </div>
-                <div class="skill-percentage">90%</div>
-              </div>
-            </li>
+            }
           </ul>
         </div>
       </div>
 
       <div class="skill-selected-detail custom-border">
+        @for (selected of skillSelectedDetail; track $index) {
         <div class="head">
           <div class="skill-logo-big">
-            <img src="" alt="" />
+            <img [src]="'../../assets/images/' + selected.imageUrl" />
           </div>
           <div class="head-skill-content">
-            <div class="skill-title"><h4>Javascript</h4></div>
+            <div class="skill-title">
+              <h4>{{ selected.skill }}</h4>
+            </div>
             <div class="skill-bar d-flex w-100">
-              <div class="bar"></div>
-              <span>90%</span>
+              <div class="bar">
+                <div class="progress-bar">
+                  <div class="progress-fill"></div>
+                </div>
+              </div>
+              <span>{{ selected.percentage }}%</span>
             </div>
             <div class="detailed-label d-flex flex-column">
               <span>DIFF : </span>
@@ -156,13 +132,10 @@
 
         <div class="skill-description">
           <p>
-            Lorem ipsum dolor sit amet consectetur. Amet sed tellus pharetra
-            urna vitae egestas nunc. Fermentum a velit integer vitae. Enim arcu
-            nibh sed cursus neque. Facilisi sed nunc diam ut augue ut maecenas
-            pellentesque. Enim pellentesque tortor maecenas consectetur et vitae
-            diam. Maecenas interdum arcu.
+            {{ selected.description }}
           </p>
         </div>
+        }
 
         <button class="main-button" style="position: absolute; bottom: 2rem">
           <a routerLink="/projects">View Projects</a>

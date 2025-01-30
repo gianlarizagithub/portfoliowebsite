@@ -374,7 +374,8 @@ h5 {
       }
       li {
         cursor: pointer;
-        &:hover {
+        &:hover,
+        &.active {
           border: 1px solid $main-500;
           border-radius: 3px;
         }
@@ -385,13 +386,18 @@ h5 {
   .skill-selected-detail {
     width: 60%;
     position: relative;
+    overflow: hidden;
     .head {
       display: flex;
       gap: 2rem;
       .skill-logo-big {
-        width: 300px;
-        height: 300px;
-        border: 1px solid white;
+        img {
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+        }
+
+        // border: 1px solid white;
       }
 
       .head-skill-content {
@@ -405,25 +411,25 @@ h5 {
         .skill-bar {
           display: flex;
           gap: 20px;
+
           .bar {
             width: 100%;
-            height: 20px;
-            // background-color: $second-500;
-            border: 1px solid $main-500;
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px; /* Matches the parent radius */
-
-            &::after {
-              content: "";
-              display: block;
-              height: 100%;
-              width: 90%; /* Matches the progress percentage */
-              background-color: #4caf50; /* Green progress */
-              position: absolute;
-              top: 0;
-              left: 0;
-              transition: width 0.3s ease;
+            .progress-bar {
+              width: 100%;
+              height: 20px;
+              border: 1px solid $main-500;
+              position: relative;
+              overflow: hidden;
+              border-radius: 4px;
+              transition: width 0.5s ease-in-out;
+              overflow: hidden;
+              .progress-fill {
+                position: absolute;
+                width: 85%;
+                height: 100%;
+                transition: all 1.5s;
+                background-color: $second-500;
+              }
             }
           }
         }
@@ -432,6 +438,7 @@ h5 {
 
     .skill-description {
       margin-top: 2rem;
+      width: 100%;
     }
   }
 }
@@ -443,6 +450,9 @@ h5 {
   padding: 22px 10px;
 
   .language {
+    span {
+      font-size: small;
+    }
     .skill-logo {
       img {
         width: 42px;
