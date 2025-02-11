@@ -16,10 +16,18 @@
               <li *ngFor="let skill of skills">
                 <div class="item-skill">
                   <div class="item-image">
-                    <img src="" alt="" />
+                    <img
+                      [src]="
+                        '../../assets/images/skills/' + skill.imageUrl + '.png'
+                      "
+                    />
+                    <!-- <img
+                      src="../../assets/images/skills/angular_logo_pixel.png"
+                      alt=""
+                    /> -->
                   </div>
                   <div class="item-name">
-                    <span>{{ skill }}</span>
+                    <span>{{ skill.skill }}</span>
                   </div>
                 </div>
               </li>
@@ -32,11 +40,7 @@
             </div>
             <div class="objectives-description">
               <p>
-                Lorem ipsum dolor sit amet consectetur. Amet sed tellus pharetra
-                urna vitae egestas nunc. Fermentum a velit integer vitae. Enim
-                arcu nibh sed cursus neque. Facilisi sed nunc diam ut augue ut
-                maecenas pellentesque. Enim pellentesque tortor maecenas
-                consectetur et vitae diam. Maecenas interdum arcu.
+                {{ projectDetails?.detailedInformation }}
               </p>
             </div>
             <div class="info-buttons d-flex gap-3">
@@ -51,7 +55,7 @@
             <img src="" alt="" />
           </div>
           <div class="project-selected-title mt-4">
-            <h2>Admin Dashboard</h2>
+            <h2>{{ projectDetails?.title }}</h2>
           </div>
           <div class="selected-project-details mt-5">
             <div class="label">

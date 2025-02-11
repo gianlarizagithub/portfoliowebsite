@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ProjectserviceService } from '../services/projectservice.service';
 
 @Component({
   selector: 'app-project-details',
@@ -13,15 +14,16 @@ export class ProjectDetailsComponent {
   startX = 0;
   scrollLeft = 0;
 
-  skills: string[] = [
-    'TAILWIND',
-    'JAVASCRIPT',
-    'ANGULAR',
-    'REACT',
-    'CSS',
-    'HTML',
-    'NODEJS',
-  ];
+  skills: { skill: string; imageUrl: string }[] = [];
+  projectDetails: any = {};
+
+  constructor(private project: ProjectserviceService) {
+    this.project.currentProject.subscribe((data) => {
+      this.projectDetails = data;
+      this.skills = data.techStack || [];
+      console.log(this.skills);
+    });
+  }
 
   ngAfterViewInit() {
     const skillsElement = this.skillsList.nativeElement;

@@ -65,8 +65,7 @@
                 <div class="language d-flex align-items-center gap-2">
                   <div class="skill-logo">
                     <img
-                      [src]="'../../assets/images/' + skill.imageUrl"
-                      alt=""
+                      [src]="'../../assets/images/skills/' + skill.imageUrl"
                     />
                   </div>
                   <span>{{ skill.skill }}</span>
@@ -93,7 +92,9 @@
               >
                 <div class="language d-flex align-items-center gap-2">
                   <div class="skill-logo">
-                    <img [src]="'../../assets/images/' + passive.imageUrl" />
+                    <img
+                      [src]="'../../assets/images/skills/' + passive.imageUrl"
+                    />
                   </div>
                   <span>{{ passive.skill }}</span>
                 </div>
@@ -109,7 +110,7 @@
         @for (selected of skillSelectedDetail; track $index) {
         <div class="head">
           <div class="skill-logo-big">
-            <img [src]="'../../assets/images/' + selected.imageUrl" />
+            <img [src]="'../../assets/images/skills/' + selected.imageUrl" />
           </div>
           <div class="head-skill-content">
             <div class="skill-title">
@@ -144,3 +145,6 @@
     </div>
   </div>
 </div>
+<!-- git add .
+git commit -m "Your commit message"
+git push -->

@@ -8,75 +8,29 @@
 
     <div class="project-container mt-5">
       <div class="row">
+        @for (item of projects; track $index) {
         <div class="col-4">
           <div class="project-content">
             <div class="project-image">
               <img src="" alt="" />
             </div>
             <div class="project-title d-flex justify-content-between mt-4">
-              <h5 class="w-50">Admin Dashboard</h5>
+              <h5 class="w-50">{{ item.title }}</h5>
               <span class="difficulty">S S S</span>
             </div>
             <button class="main-button mt-4">
-              <a routerLink="/project-details"> Explore! </a>
+              <a routerLink="/project-details" (click)="sendingProj(item)">
+                Explore!
+              </a>
             </button>
             <div class="project-information mt-4">
               <p>
-                Lorem ipsum dolor sit amet consectetur. Amet sed tellus pharetra
-                urna vitae egestas nunc. Fermentum a velit integer vitae. Enim
-                arcu nibh sed cursus neque. Facilisi sed nunc diam ut augue ut
-                maecenas pellentesque. Enim pellentesque tortor maecenas
-                consectetur et vitae diam. Maecenas interdum arcu.
+                {{ item.shortInformation }}
               </p>
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="project-content">
-            <div class="project-image">
-              <img src="" alt="" />
-            </div>
-            <div class="project-title d-flex justify-content-between mt-4">
-              <h5 class="w-50">Admin Dashboard</h5>
-              <span class="difficulty">S S S</span>
-            </div>
-            <button class="main-button mt-4">
-              <a routerLink="/project-details"> Explore! </a>
-            </button>
-            <div class="project-information mt-4">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Amet sed tellus pharetra
-                urna vitae egestas nunc. Fermentum a velit integer vitae. Enim
-                arcu nibh sed cursus neque. Facilisi sed nunc diam ut augue ut
-                maecenas pellentesque. Enim pellentesque tortor maecenas
-                consectetur et vitae diam. Maecenas interdum arcu.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="project-content">
-            <div class="project-image">
-              <img src="" alt="" />
-            </div>
-            <div class="project-title d-flex justify-content-between mt-4">
-              <h5 class="w-50">Admin Dashboard</h5>
-              <span class="difficulty">S S S</span>
-            </div>
-            <button class="main-button mt-4">
-              <a routerLink="/project-details"> Explore! </a>
-            </button>
-            <div class="project-information mt-4">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Amet sed tellus pharetra
-                urna vitae egestas nunc. Fermentum a velit integer vitae. Enim
-                arcu nibh sed cursus neque. Facilisi sed nunc diam ut augue ut
-                maecenas pellentesque. Enim pellentesque tortor maecenas
-                consectetur et vitae diam. Maecenas interdum arcu.
-              </p>
-            </div>
-          </div>
-        </div>
+        }
       </div>
     </div>
   </div>
