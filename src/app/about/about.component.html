@@ -1,7 +1,5 @@
 <div class="container">
-  <div class="navbar nav-8bit">
-    <a routerLink="/home">Back</a>
-  </div>
+  <app-back-button></app-back-button>
 
   <div class="container-fluid">
     <div class="info-container custom-border">
@@ -31,13 +29,15 @@
         <div class="info-body">
           <div class="info-title">
             <span>CHARACTER INFO : </span>
-            <div class="info-content">
+            <div class="information">
               <p id="para1">{{ para1 }}</p>
               <p id="para2">{{ para2 }}</p>
             </div>
           </div>
           <div class="info-buttons d-flex gap-3">
-            <button class="main-button"><a href="">Deploy!</a></button>
+            <button class="main-button">
+              <a routerLink="/contact-form">Deploy!</a>
+            </button>
             <button class="second-button"><a href="">Upgrade</a></button>
           </div>
         </div>

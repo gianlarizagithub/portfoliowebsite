@@ -8,6 +8,9 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { BackButtonComponent } from './back-button/back-button.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,11 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     AboutComponent,
     ProjectsComponent,
     ProjectDetailsComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    BackButtonComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

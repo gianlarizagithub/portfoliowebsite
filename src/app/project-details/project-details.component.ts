@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectserviceService } from '../services/projectservice.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-project-details',
@@ -16,11 +17,16 @@ export class ProjectDetailsComponent {
 
   skills: { skill: string; imageUrl: string }[] = [];
   projectDetails: any = {};
+  difficulty = '';
 
-  constructor(private project: ProjectserviceService) {
+  constructor(
+    private project: ProjectserviceService,
+    private location: Location
+  ) {
     this.project.currentProject.subscribe((data) => {
       this.projectDetails = data;
       this.skills = data.techStack || [];
+      this.difficulty = data.difficulty;
       console.log(this.skills);
     });
   }

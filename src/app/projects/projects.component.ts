@@ -242,10 +242,23 @@ export class ProjectsComponent {
     },
   ];
 
+  filteredProjects = [...this.projects];
   constructor(private projService: ProjectserviceService) {}
 
+  selectedDiff = '';
   sendingProj(data: any) {
     this.projService.changeProject(data);
-    console.log(data);
+  }
+
+  onChangeDifficulty(event: any) {
+    // const selectedDifficulty = (event.target as HTMLSelectElement).value;
+    if (!event) {
+      this.filteredProjects = [...this.projects];
+    } else {
+      this.selectedDiff = event;
+      this.filteredProjects = this.projects.filter(
+        (proj) => proj.difficulty === event
+      );
+    }
   }
 }

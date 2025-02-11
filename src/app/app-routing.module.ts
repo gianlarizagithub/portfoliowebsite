@@ -15,22 +15,27 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: { animation: 'HomePage' },
   },
   {
     path: 'about',
     component: AboutComponent,
+    data: { animation: 'AboutPage' },
   },
   {
     path: 'projects',
     component: ProjectsComponent,
+    data: { animation: 'ProjectPage' },
   },
   {
     path: 'project-details',
     component: ProjectDetailsComponent,
+    data: { animation: 'ProjectDetailsPage' },
   },
   {
     path: 'contact-form',
     component: ContactFormComponent,
+    data: { animation: 'ContactPage' },
   },
 ];
 

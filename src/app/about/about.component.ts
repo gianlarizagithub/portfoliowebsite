@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -174,6 +173,7 @@ export class AboutComponent {
       }
     );
   }
+
   animating(
     original: string,
     onAnimationUpdate: (animatedText: string) => void,
@@ -196,7 +196,7 @@ export class AboutComponent {
 
       if (currentIndex < orig.length) {
         currentIndex += 1 / 3; // Increment index by 1/3 for smoother animation
-        setTimeout(animateNextLetter, 3); // Adjust speed with timeout
+        setTimeout(animateNextLetter, 1); // Adjust speed with timeout
       } else {
         // Animation has ended
         if (onAnimationEnd) {

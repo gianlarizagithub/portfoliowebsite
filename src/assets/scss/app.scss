@@ -78,59 +78,38 @@ h5 {
   text-shadow: 11px 13px 0px $accent-400;
 }
 
-// .hero-section {
-//   height: 100vh;
-//   padding-top: 7rem;
+// <--START OF HOME SECTION -->
+.nav-8bit-hero {
+  padding: 3rem 6rem;
+  .score {
+    color: $second-500;
+  }
+}
 
-//   .menus {
-//     height: 111px;
-//   }
+.nav-8bit {
+  padding: 3rem;
 
-//   .start-button,
-//   .load-button {
-//     height: 100%;
-//     font-size: 23px;
-//     cursor: pointer;
+  a {
+    cursor: pointer;
+  }
+}
 
-//     p {
-//       margin-top: 0;
-//       margin-bottom: 0;
-//     }
-//     i {
-//       display: none;
-//       margin-right: 11px;
-//     }
+.contact-details,
+.contact-container {
+  .socials {
+    cursor: pointer;
 
-//     &:hover {
-//       .load-button {
-//         margin-right: 1.5rem;
-//       }
-//       p,
-//       i {
-//         font-size: 34px;
-//         color: $main-500;
-//       }
-//       i {
-//         display: block;
-//         color: $second-500;
-//       }
-//     }
-//   }
-// }
-
-// .hero-headings {
-//   h1 {
-//     margin-bottom: 0.5rem;
-//   }
-//   h1,
-//   p {
-//     margin-right: 1.5rem;
-//   }
-//   p {
-//     color: #f9a929;
-//     animation: typing 2s steps(10, end), blink 0.5s step-end infinite;
-//   }
-// }
+    .fb {
+      width: 41px;
+    }
+    img {
+      width: 49px;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+}
 
 .hero-section {
   height: 100vh;
@@ -158,18 +137,6 @@ h5 {
     }
 
     &:hover {
-      // .load-button {
-      //   margin-right: 1.5rem;
-      // }
-      // p,
-      // i {
-      //   font-size: 34px;
-      //   color: $main-500;
-      // }
-      // i {
-      //   display: block;
-      //   color: $second-500;
-      // }
       transform: scale(1.5);
 
       i {
@@ -179,67 +146,41 @@ h5 {
       }
     }
   }
-}
 
-.hero-headings {
-  h1 {
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    animation: pop-in 0.5s ease forwards;
-    animation-delay: 1s; /* Starts after .slide-top */
-    display: inline-block;
-  }
-
-  h2 {
-    animation: slide-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
-      fast-blink 0.2s step-end;
-    animation-delay: 0s, 3.5s;
-  }
-
-  p {
-    color: #f9a929;
-    border-right: none; /* Hide border initially */
-    white-space: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    width: 0; /* Start with no visible text */
-    animation: typing 2s steps(20, end) forwards, blink 1s step-end infinite;
-    animation-delay: 2s; /* Starts after h1 animation */
-    text-align: end;
-  }
-}
-
-.trademark-name {
-  padding-top: 2rem;
-}
-.nav-8bit-hero {
-  padding: 3rem 6rem;
-  .score {
-    color: $second-500;
-  }
-}
-
-.nav-8bit {
-  padding: 3rem;
-}
-
-.contact-details,
-.contact-container {
-  .socials {
-    cursor: pointer;
-
-    .fb {
-      width: 41px;
+  .hero-headings {
+    h1 {
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: pop-in 0.5s ease forwards;
+      animation-delay: 1s; /* Starts after .slide-top */
+      display: inline-block;
     }
-    img {
-      width: 49px;
-      &:hover {
-        scale: 1.2;
-      }
+
+    h2 {
+      animation: slide-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+        fast-blink 0.2s step-end;
+      animation-delay: 0s, 3.5s;
+    }
+
+    p {
+      color: #f9a929;
+      border-right: none; /* Hide border initially */
+      white-space: nowrap; /* Prevent wrapping */
+      overflow: hidden; /* Hide overflowing text */
+      width: 0; /* Start with no visible text */
+      animation: typing 2s steps(20, end) forwards, blink 1s step-end infinite;
+      animation-delay: 2s; /* Starts after h1 animation */
+      text-align: end;
     }
   }
-}
-/// custom class
 
+  .trademark-name {
+    padding-top: 2rem;
+  }
+}
+// <--END OF HOME SECTION -->
+
+// <-- START GLOBAL CLASS THAT USED IN MULTIPLE COMPONENTS -->
 .custom-border {
   border: 1px solid $main-500;
   padding: 3rem 2rem 2rem 2rem;
@@ -260,7 +201,6 @@ h5 {
     background-color: $main-600;
   }
 }
-
 .second-button {
   background-color: transparent;
   border: 1px solid $main-500;
@@ -272,12 +212,9 @@ h5 {
     border: 1px solid rgba(255, 255, 255, 0);
   }
 }
-/// end custom class
+// <-- END GLOBAL CLASS THAT USED IN MULTIPLE COMPONENTS -->
 
-/// About Section
-// .info-container {
-//   border-radius: 10px;
-// }
+// <-- START OF ABOUT SECTION -->
 .info-body {
   position: relative;
   overflow: hidden;
@@ -285,7 +222,7 @@ h5 {
     color: $second-500;
   }
 
-  .info-content {
+  .information {
     margin-top: 2rem;
     padding-bottom: 4rem;
 
@@ -303,44 +240,39 @@ h5 {
     width: 100%;
   }
 }
-.info-content {
-  .profile-container {
-    .profile {
-      img {
-        height: 250px;
-      }
-      // border: 1px solid $main-500;
-      // width: 250px;
-      // height: 250px;
+.profile-container {
+  .profile {
+    img {
+      height: 250px;
+    }
+  }
+
+  .profile-details {
+    display: grid;
+    grid-template-columns: auto 0.5fr auto;
+    gap: 3px;
+    align-items: center;
+    justify-items: center;
+
+    .mid {
+      text-align: center;
+    }
+    .val {
+      text-align: end;
     }
 
-    .profile-details {
-      // margin-top: 1rem;
-      display: grid;
-      grid-template-columns: auto 0.5fr auto;
-      gap: 3px;
-      align-items: center;
-      justify-items: center;
+    .label {
+      color: $main-400;
+    }
 
-      .mid {
-        text-align: center;
-      }
-      .val {
-        text-align: end;
-      }
-
-      .label {
-        color: $main-400;
-      }
-
-      .label span,
-      .mid span,
-      .val span {
-        display: block;
-      }
+    .label span,
+    .mid span,
+    .val span {
+      display: block;
     }
   }
 }
+
 //// end about
 
 //// SKILLS
@@ -481,8 +413,30 @@ h5 {
 /// project list
 
 .project-content {
-  .project-title h5 {
-    color: $main-500;
+  .project-title {
+    h5 {
+      color: $main-500;
+    }
+    .difficulty {
+      span {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 3px;
+      }
+
+      .easy {
+        background-color: green;
+      }
+      .medium {
+        background-color: yellow;
+
+        color: black;
+      }
+      .hard {
+        background-color: red;
+      }
+    }
   }
   .project-image {
     width: 100%;
@@ -563,7 +517,7 @@ h5 {
     grid-template-columns: auto 1fr auto;
     gap: 3px;
     align-items: center;
-
+    text-transform: uppercase;
     .mid {
       text-align: center;
     }
@@ -592,9 +546,11 @@ h5 {
   margin-bottom: 3rem;
   gap: 20px;
   .me-image {
-    width: 300px;
-    height: 300px;
-    border: 1px solid white;
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 
   p {
@@ -624,4 +580,8 @@ h5 {
       }
     }
   }
+}
+
+.dropdown-item {
+  cursor: pointer !important;
 }
