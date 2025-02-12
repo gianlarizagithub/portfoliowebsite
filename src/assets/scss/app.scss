@@ -215,67 +215,68 @@ h5 {
 // <-- END GLOBAL CLASS THAT USED IN MULTIPLE COMPONENTS -->
 
 // <-- START OF ABOUT SECTION -->
-.info-body {
-  position: relative;
-  overflow: hidden;
-  .info-title span {
-    color: $second-500;
-  }
+.info-container {
+  .info-content {
+    .profile-container {
+      .profile {
+        img {
+          height: 250px;
+        }
+      }
 
-  .information {
-    margin-top: 2rem;
-    padding-bottom: 4rem;
+      .profile-details {
+        display: grid;
+        grid-template-columns: auto 0.5fr auto;
+        gap: 3px;
+        align-items: center;
+        justify-items: center;
 
-    width: 100%;
-    max-height: 300px;
+        .mid {
+          text-align: center;
+        }
+        .val {
+          text-align: end;
+        }
 
-    p {
-      max-width: 100%;
+        .label {
+          color: $main-400;
+        }
+
+        .label span,
+        .mid span,
+        .val span {
+          display: block;
+        }
+      }
     }
-  }
 
-  .info-buttons {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    .info-body {
+      position: relative;
+      overflow: hidden;
+      .info-title span {
+        color: $second-500;
+      }
+
+      .information {
+        margin-top: 2rem;
+        padding-bottom: 4rem;
+
+        width: 100%;
+        max-height: 300px;
+
+        p {
+          max-width: 100%;
+        }
+      }
+
+      .info-buttons {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
   }
 }
-.profile-container {
-  .profile {
-    img {
-      height: 250px;
-    }
-  }
-
-  .profile-details {
-    display: grid;
-    grid-template-columns: auto 0.5fr auto;
-    gap: 3px;
-    align-items: center;
-    justify-items: center;
-
-    .mid {
-      text-align: center;
-    }
-    .val {
-      text-align: end;
-    }
-
-    .label {
-      color: $main-400;
-    }
-
-    .label span,
-    .mid span,
-    .val span {
-      display: block;
-    }
-  }
-}
-
-//// end about
-
-//// SKILLS
 
 .abilities-container {
   margin-bottom: 3rem;
@@ -328,8 +329,6 @@ h5 {
           height: 300px;
           object-fit: contain;
         }
-
-        // border: 1px solid white;
       }
 
       .head-skill-content {
@@ -374,10 +373,8 @@ h5 {
     }
   }
 }
-// .selected {
-//   border: 1px solid $main-500;
-//   border-radius: 3px;
-// }
+
+/// start i used this for skill item and passive item
 .skill-item {
   padding: 22px 10px;
 
@@ -391,8 +388,6 @@ h5 {
         height: 42px;
         object-fit: contain;
       }
-
-      // border: 1px solid white;
     }
   }
 }
@@ -409,9 +404,11 @@ h5 {
   }
   color: $main-600;
 }
+// end
 
-/// project list
+// <-- START OF ABOUT SECTION -->
 
+// <-- START OF PROJECT LIST SECTION -->
 .project-content {
   .project-title {
     h5 {
@@ -443,7 +440,13 @@ h5 {
     height: 300px;
     border: 1px solid white;
   }
+  .dropdown-item {
+    cursor: pointer !important;
+  }
 }
+// <-- END OF PROJECT LIST SECTION -->
+
+// <-- START OF PROJECT DETAILS SECTION -->
 .project-details-container {
   margin-bottom: 4rem;
   .skills-required-container {
@@ -493,50 +496,53 @@ h5 {
         overflow-wrap: break-word; /* Ensures compatibility */
       }
     }
+    .objectives-container {
+      .objectives-description {
+        margin: 2rem 0;
+        height: 300px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $main-600 #f5f5f500;
+      }
+    }
   }
 
-  .objectives-description {
-    margin: 2rem 0;
-    height: 300px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $main-600 #f5f5f500;
+  .selected-project-container {
+    position: relative;
+    .selected-project-image-big {
+      width: 100%;
+      height: 450px;
+      border: 1px solid white;
+    }
+    .selected-project-details {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 3px;
+      align-items: center;
+      text-transform: uppercase;
+      .mid {
+        text-align: center;
+      }
+      .val {
+        text-align: end;
+      }
+
+      .label span,
+      .mid span,
+      .val span {
+        display: block;
+      }
+    }
+    .second-button {
+      position: absolute;
+      bottom: 2rem;
+    }
   }
 }
+// <-- END OF PROJECT DETAILS SECTION -->
 
-.selected-project-container {
-  position: relative;
-  .selected-project-image-big {
-    width: 100%;
-    height: 450px;
-    border: 1px solid white;
-  }
-  .selected-project-details {
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 3px;
-    align-items: center;
-    text-transform: uppercase;
-    .mid {
-      text-align: center;
-    }
-    .val {
-      text-align: end;
-    }
-
-    .label span,
-    .mid span,
-    .val span {
-      display: block;
-    }
-  }
-  .second-button {
-    position: absolute;
-    bottom: 2rem;
-  }
-}
-
+// <-- START OF CONTACT FORM SECTION -->
 .contact-container {
   width: 800px;
   display: flex;
@@ -581,7 +587,4 @@ h5 {
     }
   }
 }
-
-.dropdown-item {
-  cursor: pointer !important;
-}
+// <-- END OF CONTACT FORM SECTION -->
