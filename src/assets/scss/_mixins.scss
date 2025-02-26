@@ -1,0 +1,14 @@
+// _mixins.scss
+// @import "../../../node_modules/bootstrap/scss/variables";
+
+@mixin respond-down($breakpoint) {
+  $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+  @if $breakpoint-value {
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in \$grid-breakpoints map.";
+  }
+}

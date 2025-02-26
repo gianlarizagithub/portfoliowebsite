@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ProjectserviceService } from '../services/projectservice.service';
+import { ProjectserviceService } from '../core/services/projectservice.service';
 import { Location } from '@angular/common';
 
 @Component({

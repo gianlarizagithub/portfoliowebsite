@@ -80,6 +80,7 @@ h5 {
 
 // <--START OF HOME SECTION -->
 .nav-8bit-hero {
+  z-index: 222;
   padding: 3rem 6rem;
   .score {
     color: $second-500;
@@ -148,12 +149,15 @@ h5 {
   }
 
   .hero-headings {
-    h1 {
-      margin-bottom: 0.5rem;
-      opacity: 0;
-      animation: pop-in 0.5s ease forwards;
-      animation-delay: 1s; /* Starts after .slide-top */
-      display: inline-block;
+    .hero-subheading {
+      span {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        opacity: 0;
+        animation: pop-in 0.5s ease forwards;
+        animation-delay: 1s; /* Starts after .slide-top */
+        display: inline-block;
+      }
     }
 
     h2 {
@@ -262,7 +266,7 @@ h5 {
         padding-bottom: 4rem;
 
         width: 100%;
-        max-height: 300px;
+        // max-height: 300px;
 
         p {
           max-width: 100%;
@@ -281,7 +285,7 @@ h5 {
 .abilities-container {
   margin-bottom: 3rem;
   .abilities {
-    width: 40%;
+    // width: 40%;
     height: auto;
     margin: 0 auto;
 
@@ -317,7 +321,7 @@ h5 {
   }
 
   .skill-selected-detail {
-    width: 60%;
+    // width: 60%;
     position: relative;
     overflow: hidden;
     .head {
@@ -325,14 +329,15 @@ h5 {
       gap: 2rem;
       .skill-logo-big {
         img {
-          width: 300px;
           height: 300px;
+          width: 300px;
           object-fit: contain;
         }
       }
 
       .head-skill-content {
-        width: 50%;
+        flex-grow: 1;
+        width: 100%;
         display: flex;
         gap: 40px;
         align-items: flex-start;
@@ -368,6 +373,11 @@ h5 {
     }
 
     .skill-description {
+      p {
+        overflow: hidden;
+        width: 100%;
+      }
+
       margin-top: 2rem;
       width: 100%;
     }
@@ -535,7 +545,8 @@ h5 {
       }
     }
     .second-button {
-      position: absolute;
+      // position: absolute;
+      margin-top: 2rem;
       bottom: 2rem;
     }
   }

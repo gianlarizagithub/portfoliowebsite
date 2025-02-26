@@ -1,44 +1,50 @@
-<div class="container">
+<div class="container-xl">
   <app-back-button></app-back-button>
 
   <div class="container-fluid">
     <div class="info-container custom-border">
-      <div class="info-content d-flex gap-5">
-        <div class="profile-container">
-          <div class="profile">
-            <img src="../../assets/images/pixil-gif-drawing.gif" alt="" />
-          </div>
-          <div class="profile-details">
-            <div class="label">
-              <span>YNS</span>
-              <span>LVL</span>
-              <span>EXP</span>
-            </div>
-            <div class="mid">
-              <span>:</span>
-              <span>:</span>
-              <span>:</span>
-            </div>
-            <div class="val">
-              <span>DEV</span>
-              <span>28 YRS</span>
-              <span>3 YRS</span>
-            </div>
-          </div>
-        </div>
-        <div class="info-body">
-          <div class="info-title">
-            <span>CHARACTER INFO : </span>
-            <div class="information">
-              <p id="para1">{{ para1 }}</p>
-              <p id="para2">{{ para2 }}</p>
+      <div class="info-content">
+        <div class="row justify-content-between">
+          <div class="col-12 col-lg-3">
+            <div class="profile-container">
+              <div class="profile">
+                <img src="../../assets/images/pixil-gif-drawing.gif" alt="" />
+              </div>
+              <div class="profile-details">
+                <div class="label">
+                  <span>YNS</span>
+                  <span>LVL</span>
+                  <span>EXP</span>
+                </div>
+                <div class="mid">
+                  <span>:</span>
+                  <span>:</span>
+                  <span>:</span>
+                </div>
+                <div class="val">
+                  <span>DEV</span>
+                  <span>28 YRS</span>
+                  <span>3 YRS</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="info-buttons d-flex gap-3">
-            <button class="main-button">
-              <a routerLink="/contact-form">Deploy!</a>
-            </button>
-            <button class="second-button"><a href="">Upgrade</a></button>
+          <div class="col-12 col-lg-8">
+            <div class="info-body">
+              <div class="info-title">
+                <span>CHARACTER INFO : </span>
+                <div class="information">
+                  <p id="para1">{{ para1 }}</p>
+                  <p id="para2">{{ para2 }}</p>
+                </div>
+              </div>
+              <div class="info-buttons d-flex gap-3">
+                <button class="main-button">
+                  <a routerLink="/contact-form">Deploy!</a>
+                </button>
+                <button class="second-button"><a href="">Upgrade</a></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -46,101 +52,115 @@
 
     <!--SKILLS-->
 
-    <div class="abilities-container mt-5 d-flex gap-5">
-      <div class="abilities custom-border">
-        <div class="skills">
-          <div class="title">
-            <div class="pixel-box"></div>
-            <span>SKILLS :</span>
-          </div>
-          <ul>
-            @for (skill of skills; track $index) {
-            <li
-              (click)="updateProgressBar(skill)"
-              [ngClass]="{ active: skill.active }"
-            >
-              <div
-                class="skill-item d-flex justify-content-between align-items-center"
-              >
-                <div class="language d-flex align-items-center gap-2">
-                  <div class="skill-logo">
-                    <img
-                      [src]="'../../assets/images/skills/' + skill.imageUrl"
-                    />
+    <div class="abilities-container mt-5">
+      <div class="row gap-4 gap-lg-0">
+        <div class="col-lg-5">
+          <div class="abilities custom-border">
+            <div class="skills">
+              <div class="title">
+                <div class="pixel-box"></div>
+                <span>SKILLS :</span>
+              </div>
+              <ul>
+                @for (skill of skills; track $index) {
+                <li
+                  (click)="updateProgressBar(skill)"
+                  [ngClass]="{ active: skill.active }"
+                >
+                  <div
+                    class="skill-item d-flex justify-content-between align-items-center"
+                  >
+                    <div class="language d-flex align-items-center gap-2">
+                      <div class="skill-logo">
+                        <img
+                          [src]="'../../assets/images/skills/' + skill.imageUrl"
+                        />
+                      </div>
+                      <span>{{ skill.skill }}</span>
+                    </div>
+                    <div class="skill-percentage">{{ skill.percentage }}%</div>
                   </div>
-                  <span>{{ skill.skill }}</span>
-                </div>
-                <div class="skill-percentage">{{ skill.percentage }}%</div>
+                </li>
+                }
+              </ul>
+            </div>
+            <div class="passive">
+              <div class="title">
+                <div class="pixel-box"></div>
+                <span>PASSIVE :</span>
               </div>
-            </li>
-            }
-          </ul>
-        </div>
-        <div class="passive">
-          <div class="title">
-            <div class="pixel-box"></div>
-            <span>PASSIVE :</span>
-          </div>
-          <ul>
-            @for (passive of passives; track $index) {
-            <li
-              (click)="updateProgressBar(passive)"
-              [ngClass]="{ active: passive.active }"
-            >
-              <div
-                class="skill-item d-flex justify-content-between align-items-center"
-              >
-                <div class="language d-flex align-items-center gap-2">
-                  <div class="skill-logo">
-                    <img
-                      [src]="'../../assets/images/skills/' + passive.imageUrl"
-                    />
+              <ul>
+                @for (passive of passives; track $index) {
+                <li
+                  (click)="updateProgressBar(passive)"
+                  [ngClass]="{ active: passive.active }"
+                >
+                  <div
+                    class="skill-item d-flex justify-content-between align-items-center"
+                  >
+                    <div class="language d-flex align-items-center gap-2">
+                      <div class="skill-logo">
+                        <img
+                          [src]="
+                            '../../assets/images/skills/' + passive.imageUrl
+                          "
+                        />
+                      </div>
+                      <span>{{ passive.skill }}</span>
+                    </div>
+                    <div class="skill-percentage">
+                      {{ passive.percentage }}%
+                    </div>
                   </div>
-                  <span>{{ passive.skill }}</span>
-                </div>
-                <div class="skill-percentage">{{ passive.percentage }}%</div>
+                </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="skill-selected-detail custom-border">
+            @for (selected of skillSelectedDetail; track $index) {
+            <div class="head">
+              <div class="skill-logo-big">
+                <img
+                  [src]="'../../assets/images/skills/' + selected.imageUrl"
+                />
               </div>
-            </li>
+              <div class="d-flex flex-grow-1 w-100">
+                <div class="head-skill-content">
+                  <div class="skill-title">
+                    <h4>{{ selected.skill }}</h4>
+                  </div>
+                  <div class="skill-bar d-flex w-100">
+                    <div class="bar">
+                      <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                      </div>
+                    </div>
+                    <span>{{ selected.percentage }}%</span>
+                  </div>
+                  <div class="detailed-label d-flex flex-column">
+                    <span>DIFF : </span>
+                    <span>TYPE : </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-description">
+              <p>
+                {{ selected.description }}
+              </p>
+            </div>
             }
-          </ul>
-        </div>
-      </div>
 
-      <div class="skill-selected-detail custom-border">
-        @for (selected of skillSelectedDetail; track $index) {
-        <div class="head">
-          <div class="skill-logo-big">
-            <img [src]="'../../assets/images/skills/' + selected.imageUrl" />
-          </div>
-          <div class="head-skill-content">
-            <div class="skill-title">
-              <h4>{{ selected.skill }}</h4>
-            </div>
-            <div class="skill-bar d-flex w-100">
-              <div class="bar">
-                <div class="progress-bar">
-                  <div class="progress-fill"></div>
-                </div>
-              </div>
-              <span>{{ selected.percentage }}%</span>
-            </div>
-            <div class="detailed-label d-flex flex-column">
-              <span>DIFF : </span>
-              <span>TYPE : </span>
-            </div>
+            <button class="main-button mt-3">
+              <a routerLink="/projects">View Projects</a>
+            </button>
           </div>
         </div>
-
-        <div class="skill-description">
-          <p>
-            {{ selected.description }}
-          </p>
-        </div>
-        }
-
-        <button class="main-button" style="position: absolute; bottom: 2rem">
-          <a routerLink="/projects">View Projects</a>
-        </button>
       </div>
     </div>
   </div>

@@ -1,3 +1,7 @@
+import {
+  PROJECT_REPOSITORY,
+  ProjectRepository,
+} from './core/ports/project.repository';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +15,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectService } from './core/services/project.service';
+import { ProjectMockAdapter } from './adapters/mock/project-mock.adapter';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BackButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
+  providers: [{ provide: PROJECT_REPOSITORY, useClass: ProjectMockAdapter }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

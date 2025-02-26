@@ -1,0 +1,132 @@
+// For screens smaller than 992px
+@include respond-down(lg) {
+  // <--START OF HOME SECTION RESPONSIVE-->
+  .nav-8bit-hero {
+    h3 {
+      font-size: 21px;
+    }
+  }
+
+  .contact-details,
+  .contact-container {
+    .socials {
+      .fb {
+        width: 33px;
+      }
+      img {
+        width: 33px;
+        &:hover {
+          scale: 1;
+        }
+      }
+    }
+  }
+
+  .main-heading {
+    font-size: 21rem;
+    margin-top: -14rem;
+    margin-bottom: -6rem;
+  }
+  .hero-headings {
+    margin-top: 1rem;
+    .hero-subheading {
+      span {
+        font-size: 2rem !important;
+      }
+    }
+  }
+
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile-details {
+      gap: 34px !important;
+    }
+  }
+
+  .info-body {
+    margin-top: 2rem;
+  }
+  .information {
+    margin-top: 1rem !important;
+  }
+
+  .selected-project-container {
+    margin-bottom: 2rem;
+  }
+}
+
+// For screens smaller than 768px
+@include respond-down(md) {
+  .nav-8bit-hero {
+    padding: 2rem 1rem;
+    h3 {
+      font-size: 18px;
+    }
+  }
+  .main-heading {
+    font-size: 20rem;
+    margin-top: -13rem;
+    margin-bottom: -7rem;
+  }
+  .hero-headings {
+    margin-top: 1rem;
+    .hero-subheading {
+      span {
+        font-size: 1.5rem !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+  .skill-selected-detail {
+    .head {
+      flex-direction: column;
+      .skill-logo-big {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// For screens smaller than 576px
+@include respond-down(sm) {
+  .nav-8bit-hero {
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .main-heading {
+    font-size: 15rem;
+    line-height: 28rem;
+  }
+  .hero-headings {
+    position: relative;
+
+    p {
+      position: absolute;
+      bottom: -1rem;
+      font-size: 13px;
+    }
+  }
+
+  .hero-section .menus {
+    height: 82px;
+  }
+
+  .load-button,
+  .start-button {
+    font-size: 18px !important;
+
+    &hover {
+      transform: scale(0.5) !important;
+    }
+  }
+  .trademark-name {
+    padding-top: 1rem;
+    font-size: 12px;
+  }
+}

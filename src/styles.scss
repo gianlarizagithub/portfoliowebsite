@@ -4,6 +4,9 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+@import "./assets/scss/mixins";
+
 @import "./assets/scss/animation.scss";
 
 @import "./assets/scss/app.scss";
+@import "./assets/scss/responsive";

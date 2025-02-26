@@ -1,5 +1,6 @@
+import { Project } from './../core/models/project.model';
 import { Component } from '@angular/core';
-import { ProjectserviceService } from '../services/projectservice.service';
+import { ProjectserviceService } from '../core/services/projectservice.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,7 +9,6 @@ import { ProjectserviceService } from '../services/projectservice.service';
 })
 export class ProjectsComponent {
   projects = [
-    // Easy Projects
     {
       imgUrl: '',
       title: 'Weather Forecasting System',
@@ -100,7 +100,6 @@ export class ProjectsComponent {
         'The Expense Tracker App is a financial management tool designed to help users log, categorize, and track their spending habits. The app allows users to set a monthly budget, enter their expenses, and view detailed reports and graphs showing their spending patterns.',
     },
 
-    // Medium Projects
     {
       imgUrl: '',
       title: 'E-commerce Product Page',
@@ -170,7 +169,6 @@ export class ProjectsComponent {
         'The Portfolio Website with CMS is a personal website designed to showcase a user’s work, skills, and experience. The app allows users to create, edit, and publish their portfolio projects through an easy-to-use content management system.',
     },
 
-    // Hard Projects
     {
       imgUrl: '',
       title: 'AI-Powered Chatbot',
@@ -242,8 +240,15 @@ export class ProjectsComponent {
     },
   ];
 
-  filteredProjects = [...this.projects];
-  constructor(private projService: ProjectserviceService) {}
+  mprojects: Project[] = [];
+
+  filteredProjects: Project[] = [];
+  constructor(private projService: ProjectserviceService) {
+    this.projService.getAllProjects().subscribe((data) => {
+      this.mprojects = data;
+      this.filteredProjects = [...this.mprojects];
+    });
+  }
 
   selectedDiff = '';
   sendingProj(data: any) {
@@ -251,12 +256,11 @@ export class ProjectsComponent {
   }
 
   onChangeDifficulty(event: any) {
-    // const selectedDifficulty = (event.target as HTMLSelectElement).value;
     if (!event) {
-      this.filteredProjects = [...this.projects];
+      this.filteredProjects = [...this.mprojects];
     } else {
       this.selectedDiff = event;
-      this.filteredProjects = this.projects.filter(
+      this.filteredProjects = this.mprojects.filter(
         (proj) => proj.difficulty === event
       );
     }
